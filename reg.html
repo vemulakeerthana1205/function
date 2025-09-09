@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Event Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #218838;
+    }
+
+    .required {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Event Registration</h2>
+    <form action="submit-form.php" method="POST">
+      <label for="fullname">Full Name <span class="required">*</span></label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email <span class="required">*</span></label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="e.g. 9876543210">
+
+      <label for="event">Select Event <span class="required">*</span></label>
+      <select id="event" name="event" required>
+        <option value="">-- Please choose an event --</option>
+        <option value="tech">Tech Conference</option>
+        <option value="workshop">Workshop</option>
+        <option value="webinar">Webinar</option>
+      </select>
+
+      <label for="message">Additional Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Any special requirements..."></textarea>
+
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+</body>
+</html>
